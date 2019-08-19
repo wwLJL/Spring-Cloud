@@ -1,19 +1,19 @@
-eureka-server:					127.0.0.1:8761
+eureka-server:				127.0.0.1:8761
 
-index-zuul-service:				127.0.0.1:8031
+index-zuul-service:			127.0.0.1:8031
 
 index-config-server:			127.0.0.1:8060
 
-third-part-index-data-project:	127.0.0.1:8090/indexes/{filename}
+third-part-index-data-project:		127.0.0.1:8090/indexes/{filename}
 
-index-codes-service: 			127.0.0.1:8011/codes					127.0.0.1:8031/api-codes/codes
+index-codes-service: 			127.0.0.1:8011/codes			127.0.0.1:8031/api-codes/codes
 
-index-data-service:			1	27.0.0.1:8021/data/{code}
+index-data-service:			127.0.0.1:8021/data/{code}
 
 index-gather-store-service:		127.0.0.1:8001/freshCodes
-								127.0.0.1:8001/freshData/{code}
+					127.0.0.1:8001/freshData/{code}
 
-trend-trading-backtest-view:	127.0.0.1:8041/							127.0.0.1:8030/api-view/
+trend-trading-backtest-view:		127.0.0.1:8041/				127.0.0.1:8030/api-view/
 
-trend-trading-backtest-service:	127.0.0.1:8051/simulate/{code}/{ma}/{buyThreshold}/{sellThreshold}/{serviceCharge}/{startDate}/{endDate}
+trend-trading-backtest-service:		127.0.0.1:8051/simulate/{code}/{ma}/{buyThreshold}/{sellThreshold}/{serviceCharge}/{startDate}/{endDate}
 
