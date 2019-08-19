@@ -12,7 +12,6 @@ index-data-service:				127.0.0.1:8021/data/{code}
 
 index-data-service:				127.0.0.1:8021/data/{code}
 
-
 index-gather-store-service:		127.0.0.1:8001/freshCodes
 								127.0.0.1:8001/freshData/{code}
 								
