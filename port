@@ -1,23 +1,26 @@
-eureka-server:				127.0.0.1:8761
+eureka-server:					127.0.0.1:8761
 
-index-zuul-service:			127.0.0.1:8031
+index-zuul-service:				127.0.0.1:8031
 
 index-config-server:			127.0.0.1:8060
 
-third-part-index-data-project:		127.0.0.1:8090/indexes/{filename}
+third-part-index-data-project:	127.0.0.1:8090/indexes/{filename}
 
-index-codes-service: 			127.0.0.1:8011/codes			127.0.0.1:8031/api-codes/codes
-
-<<<<<<< HEAD
+index-codes-service: 			127.0.0.1:8011/codes				127.0.0.1:8031/api-codes/codes
+	
 index-data-service:				127.0.0.1:8021/data/{code}
-=======
-index-data-service:			127.0.0.1:8021/data/{code}
->>>>>>> refs/remotes/wuwei/Trend
+
+index-data-service:				127.0.0.1:8021/data/{code}
+
 
 index-gather-store-service:		127.0.0.1:8001/freshCodes
-					127.0.0.1:8001/freshData/{code}
+								127.0.0.1:8001/freshData/{code}
+								
+login-server:					127.0.0.1:8081/login.do				127.0.0.1:8031/api-loginServer/login.do
 
-trend-trading-backtest-view:		127.0.0.1:8041/				127.0.0.1:8030/api-view/
+login-view:						127.0.0.1:8071/						127.0.0.1:8031/api-loginView/
 
-trend-trading-backtest-service:		127.0.0.1:8051/simulate/{code}/{ma}/{buyThreshold}/{sellThreshold}/{serviceCharge}/{startDate}/{endDate}
+trend-trading-backtest-view:	127.0.0.1:8041/						127.0.0.1:8031/api-view/
+
+trend-trading-backtest-service:	127.0.0.1:8051/simulate/{code}/{ma}/{buyThreshold}/{sellThreshold}/{serviceCharge}/{startDate}/{endDate}
 
