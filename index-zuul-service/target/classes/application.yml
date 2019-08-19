@@ -18,3 +18,9 @@ zuul:
     api-c:
       path: /api-view/**
       serviceId: TREND-TRADING-BACKTEST-VIEW
+    api-d:
+      path: /api-loginView/**
+      serviceId: LOGIN-VIEW
+    api-e: 
+      path: /api-loginServer/**
+      serviceId: LOGIN-SERVER

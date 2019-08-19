@@ -8,7 +8,7 @@ third-part-index-data-project:	127.0.0.1:8090/indexes/{filename}
 
 index-codes-service: 			127.0.0.1:8011/codes					127.0.0.1:8031/api-codes/codes
 
-index-data-service:			1	27.0.0.1:8021/data/{code}
+index-data-service:				127.0.0.1:8021/data/{code}
 
 index-gather-store-service:		127.0.0.1:8001/freshCodes
 								127.0.0.1:8001/freshData/{code}

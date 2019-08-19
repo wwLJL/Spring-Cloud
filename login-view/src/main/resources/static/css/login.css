@@ -1,0 +1,118 @@
+/* CSS Document */
+*
+{
+	font-size:9pt;
+	border:0;
+	margin:0;
+	padding:0;
+	font-family:"楷体";
+}
+
+body
+{
+	background-color:#1c77ac;
+	background-image:url(../images/light.png);
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+
+.contain
+{
+	background-image:url(../images/loginbg3.png);
+	background-repeat:no-repeat;
+	background-position:center top;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+
+.logintop
+{
+	background-color:#1c77ac;
+	background-position:center top;
+	width:100%;
+	height:60px;	
+}
+
+.loginbody
+{
+	width:100%;
+	height:700px;
+}
+
+.logindiv
+{
+	background-image:url(../images/logininfo3.png);
+	background-repeat:no-repeat;
+	margin-top:8%;
+	margin-left:32%;
+	width:692px;
+	height:372px;
+}
+
+.loginform
+{
+	margin-top:10%;
+	margin-left:35%;
+	padding-top:70px;
+	font-size:14px;
+	wight:400px;
+	height:250px;	
+}
+
+.loginform ul
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.loginform ul li
+{
+	margin:0;
+	list-style:none;
+	padding-bottom:0;
+	padding-top:20px;
+	padding-left:30px;
+	padding-right:0;
+}
+
+.loginuser
+{
+	background-image:url(../images/loginuser.png);
+	border:none;
+	padding-left:44px;
+	width:299px;
+	height:48px;
+}
+
+.loginpwd
+{
+	background-image:url(../images/loginpassword.png);
+	border:none;
+	padding-left:44px;
+	width:299px;
+	height:48px;
+}
+
+.loginbtn
+{
+	background-image:url(../images/buttonbg.png);
+	font-wight:bold;
+	cursor:pointer;
+	width:111px;
+	height:35px;
+}
+
+.loginbottom
+{
+	background-color:#1c77ac;
+	bottom:0;
+	text-align:center;
+	position:absolute;
+	width:100%;
+	height:60px;
+}
+	
+
+
