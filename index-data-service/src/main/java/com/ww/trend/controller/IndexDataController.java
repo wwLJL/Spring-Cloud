@@ -21,7 +21,6 @@ public class IndexDataController {
 	
 	@GetMapping("/data/{code}")
 	public List<IndexData> getData(@PathVariable("code") String code) {
-		System.out.println("current instance is : " + ipConfig.getPort());
 		return indexDataService.getData(code);
 	}
 

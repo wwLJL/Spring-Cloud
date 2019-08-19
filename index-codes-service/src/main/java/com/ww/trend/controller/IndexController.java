@@ -22,7 +22,6 @@ public class IndexController {
 	@GetMapping("/codes")
 	@CrossOrigin
 	public List<Index> getCodes() {
-		System.out.println("current instance port is : "+ ipConfig.getPort());
 		return indexService.getCodes();
 	}
 
