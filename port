@@ -1,0 +1,5 @@
+eureka-server		8761
+
+zuul-server			8080
+
+login-view			8001		/loginView/**

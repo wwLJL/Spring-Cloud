@@ -1,0 +1,16 @@
+server:
+  port: 8001
+  
+spring:
+  application:
+    name: login-view
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/

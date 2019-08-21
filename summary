@@ -1,0 +1,123 @@
+Parent.pom:
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath/>
+	</parent>
+		 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+	</properties>
+		 
+	<dependencies>
+		  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		    
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		    
+	</dependencies>
+		 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+		        <scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+Eureka.pom:
+	<dependencies>
+		
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+				
+	</dependencies>
+	
+Eureka.application:
+	server:
+		port: 8761
+		
+	spring:
+		application:
+		name: eureka-server
+		
+	eureka:
+		instance:
+			hostname: 127.0.0.1
+		client:
+		    registerWithEureka: false
+		    fetchRegister: false
+		    serviceUrl:
+		      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+		      
+Eureka.run:
+	@SpringBootApplication
+	@EnableEurekaServer
+	
+Zuul.pom:
+	<dependencies>
+ 	
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+ 	
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+  
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+ 
+    </dependencies>
+    
+Zuul.application:
+	server:
+	  port: 8080
+	
+	spring:
+	  application:
+	    name: zuul-server
+	    
+	eureka:
+	  client:
+	    serviceUrl:
+	      defaultZone: http://127.0.0.1:8761/eureka/
+	
+	zuul:
+	  routes:
+	    api-a:
+	      path: /xx/**
+	      serviceId: xxxx
+	      
+Zuul.run:
+	@SpringBootApplication
+	@EnableEurekaClient
+	@EnableZuulProxy
+	@EnableDiscoveryClient
+	
+		
+
+
+	
