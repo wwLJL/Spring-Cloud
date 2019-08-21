@@ -9,6 +9,7 @@ import java.util.concurrent.TimeoutException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.thread.ThreadUtil;
@@ -17,6 +18,7 @@ import cn.hutool.core.util.NumberUtil;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients
 public class TrendTradingBackTestViewApplication {
 
 	public static void main(String[] args) {

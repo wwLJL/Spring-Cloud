@@ -12,18 +12,18 @@ import com.ww.trend.pojo.User;
 @CacheConfig(cacheNames = "Users")
 public class UserService {
 	
-	@Cacheable(key = "'user'")
-	public User get() {
+	@Cacheable(key = "'user' + #id")
+	public User get(Integer id) {
 		User user = new User();
 		return user;
 	}
 	
-	@CachePut(key = "'user'")
+	@CachePut(key = "'user' + #user.getId()")
 	public User store(User user) {
 		return user;
 	}
 	
-	@CacheEvict(key = "'user'")
+	@CacheEvict(key = "'user' + #user.getId()")
 	public int remove(User user) {
 		return 0;
 	}

@@ -3,6 +3,7 @@ package com.ww.trend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ww.trend.pojo.User;
@@ -15,8 +16,8 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping("/findUser")
-	public User findUser() {
-		return userService.get();
+	public User findUser(@RequestParam("id") Integer id) {
+		return userService.get(id);
 	}
 	
 	@RequestMapping("/addUser")

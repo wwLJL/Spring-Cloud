@@ -26,7 +26,7 @@ public class UserController {
 		else {
 			if(userDAO.findByAccountAndPassword(account, password) != null) {
 				sessionServerClient.addUser(userDAO.findByAccountAndPassword(account, password));
-				return "success";
+				return "success," + userDAO.findByAccountAndPassword(account, password).getId();
 			}
 			else {
 				return "fail";
