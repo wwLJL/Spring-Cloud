@@ -117,6 +117,188 @@ Zuul.run:
 	@EnableZuulProxy
 	@EnableDiscoveryClient
 	
+	
+Mysql.pom:
+	<dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        
+         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency> 
+      
+	</dependencies>
+
+Mysql.application:
+	server:
+	  port: XXXX
+	  
+	spring:
+	  application:
+	    name: XXXX
+	  datasource:
+	    url: jdbc:mysql://127.0.0.1:3306/XXX?characterEncoding=UTF-8
+	    username: root
+	    password: 123456
+	    driver-class-name: com.mysql.jdbc.Driver
+	  jpa:
+	    properties:
+	      hibernate:
+	        hbm2ddl:
+	          auto: update
+	
+	eureka:
+	  client:
+	    serviceUrl:
+	      defaultZone: http://127.0.0.1:8761/eureka/
+
+Mysql.run:
+	@SpringBootApplication
+	@EnableEurekaClient
+	
+Feign+Hystrix.pom:
+	<dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        
+    </dependencies> 
+
+Feign+Hystrix.application:
+	server:
+	  port: XXXX
+	  
+	eureka:
+	  client:
+	    serviceUrl:
+	      defaultZone: http://127.0.0.1:8761/eureka/
+	      
+	spring:
+	  application: 
+	    name: XXXX
+	    
+	feign:
+	  hystrix:
+	    enabled: true
+	    
+Feign+Hystrix.run:
+	@SpringBootApplication
+	@EnableEurekaClient
+	@EnableDiscoveryClient
+	@EnableFeignClients
+
+View.pom:
+	<dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+ 
+    </dependencies>
+    
+View.application:
+	server:
+	  port: XXXX
+	  
+	spring:
+	  application:
+	    name: XXXX
+	  thymeleaf:
+	    mode: LEGACYHTML5
+	    encoding: UTF-8
+	    content-type: text/html
+	    cache: false
+	 
+	eureka:
+	  client:
+	    serviceUrl:
+	      defaultZone: http://127.0.0.1:8761/eureka/
+	     
+View.run:
+	@SpringBootApplication
+	@EnableEurekaClient
+	
+Redis.pom:
+	<dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+ 
+    </dependencies>
+    
+Redis.application:
+	server:
+		port: XXXX
+		
+	eureka:
+	  client:
+	    serviceUrl:
+	      defaultZone: http://127.0.0.1:8761/eureka/
+	      
+	spring:
+	  application:
+	    name: XXXX
+
+Redis.run:
+	@SpringBootApplication
+	@EnableEurekaClient
+	@EnableCaching
+	
+	
 		
 
 

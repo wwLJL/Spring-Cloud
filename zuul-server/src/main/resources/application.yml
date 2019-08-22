@@ -15,4 +15,10 @@ zuul:
     api-a:
       path: /loginView/**
       serviceId: LOGIN-VIEW
+    api-b:
+      path: /loginServer/**
+      serviceId: LOGIN-SERVER
+    api-c:
+      path: /musicManageView/**
+      serviceId: MUSIC-MANAGE-VIEW
       

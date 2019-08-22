@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>音乐管理系统</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css"></link>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-table.min.css"></link>
+</head>
+
+<body>
+	<div class="panel panel-default">
+    	<div class="panel-heading">
+        	用户信息管理
+        </div>
+        <div id="toolbar">
+        	<button id = "add" class="btn btn-primary" data-toggle="modal" data-target="#musicAddModal"> 
+            	添加
+           	</button>
+           	<button id = "remove" class="btn btn-primary"> 
+            	删除
+           	</button>
+		</div>
+		<table id="musictab"
+			data-toolbar="#toolbar"
+			data-show-refresh="true"
+			data-show-toggle="true"
+		    data-show-columns="true">
+      	</table>
+    </div>
+       
+    <div class="modal fade" id="musicAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">
+                        音乐信息
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                    	<label for="name" class="col-sm-4 control-label">
+                        	歌曲名：
+                        </label>
+                        <div class="col-sm-8">
+                        	<input type="text" class="form-control" id="name" placeholder="请输入歌曲名" />
+                        </div>
+                    </div> 
+                    <div class="row">
+                    	<label for="singer" class="col-sm-4 control-label">
+                        	歌手：
+                        </label>
+                        <div class="col-sm-8">
+                        	<input type="text" class="form-control" id="singer" placeholder="请输入歌手" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="add_muisc_Btn">
+                        添加
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>            
+                </div>
+            </div>
+        </div>
+    </div>
+  	
+<script charset="UTF-8" type="text/javascript" src="../js/jquery.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="../js/bootstrap-table.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="../js/bootstrap-table-locale-all.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="../js/music-manage.js"></script>
+</body>
+</html>

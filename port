@@ -3,3 +3,9 @@ eureka-server		8761
 zuul-server			8080
 
 login-view			8001		/loginView/**
+
+login-server 		8011		/loginServer/**
+
+music-manage-view 	8021		/musicManageView/**
+
+session-server		8041		/sessionServer/**
