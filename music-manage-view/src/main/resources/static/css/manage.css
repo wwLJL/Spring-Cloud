@@ -1,0 +1,19 @@
+/* CSS Document */
+*
+.menu{
+    width:10%;
+    height:930px;
+    float:left;
+    margin-right: 3%;
+    padding: 20px auto;
+    border-right: 1px solid grey;
+}
+
+.menuItem{
+    margin:10px 0;
+}
+
+.main{
+   float:left;
+   width:85%;
+}

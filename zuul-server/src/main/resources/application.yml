@@ -21,4 +21,7 @@ zuul:
     api-c:
       path: /musicManageView/**
       serviceId: MUSIC-MANAGE-VIEW
+    api-d: 
+      path: /musicManageServer/**
+      serviceId: MUSIC-MANAGE-SERVER
       

@@ -11,5 +11,8 @@ public interface SessionServerClient {
 	
 	@RequestMapping("/findAdmin")
 	public Admin findAdmin(@RequestParam("id") Integer id);
+	
+	@RequestMapping("/deleteAdmin")
+	public int deleteAdmin(@RequestParam("id") Integer id);
 
 }

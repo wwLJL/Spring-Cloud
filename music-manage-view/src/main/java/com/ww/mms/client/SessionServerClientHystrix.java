@@ -12,5 +12,11 @@ public class SessionServerClientHystrix implements SessionServerClient {
 		System.out.println(123);
 		return null;
 	}
+
+	@Override
+	public int deleteAdmin(Integer id) {
+		System.out.println(123);
+		return 1;
+	}
 	
 }

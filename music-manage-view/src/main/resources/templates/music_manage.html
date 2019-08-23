@@ -6,28 +6,51 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css"></link>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap-table.min.css"></link>
+<link rel="stylesheet" type="text/css" href="../css/manage.css"></link>
 </head>
 
 <body>
-	<div class="panel panel-default">
-    	<div class="panel-heading">
-        	用户信息管理
-        </div>
-        <div id="toolbar">
-        	<button id = "add" class="btn btn-primary" data-toggle="modal" data-target="#musicAddModal"> 
-            	添加
-           	</button>
-           	<button id = "remove" class="btn btn-primary"> 
-            	删除
-           	</button>
-		</div>
-		<table id="musictab"
-			data-toolbar="#toolbar"
-			data-show-refresh="true"
-			data-show-toggle="true"
-		    data-show-columns="true">
-      	</table>
-    </div>
+	<div class="menu" >
+		<ul>
+			<li class="menuItem">
+                <a href="#menu1" data-toggle="collapse"> <span class="glyphicon glyphicon-th-large " aria-hidden="true"></span>
+   				<span>音乐管理</span><span class="upDown down"></span></a>
+   				<ul class="nav collapse" id="menu1">
+   					<li id="musicList"><a href="#">音乐信息列表</a></li>
+   				</ul>
+   			</li>
+   			<li class="menuItem">
+                <a href="#menu2" data-toggle="collapse"> <span class="glyphicon glyphicon-th-large " aria-hidden="true"></span>
+   				<span>用户管理</span><span class="upDown down"></span></a>
+   				<ul class="nav collapse" id="menu2">
+   					<li id="userList"><a href="#">用户信息列表</a></li>
+   				</ul>
+   			</li>
+            <li class="menuItem">
+                <a href="#menu3" data-toggle="collapse"> <span class="glyphicon glyphicon-th-large " aria-hidden="true"></span>
+                <span>个人中心</span><span class="upDown down"></span></a>
+                <ul class="nav collapse" id="menu3">
+                    <li id="backLogin"><a th:href="@{'http://127.0.0.1:8080/musicManageView/logout/'+${session.id}}">注销</a></li>
+                </ul>
+            </li>
+   		</ul>
+	</div>
+	<div id="music" class="main">
+		<div class="panel panel-default">
+	    	<div class="panel-heading">
+	        	音乐信息管理
+	        </div>
+	        <div id="toolbar">
+	        	<button id = "add" class="btn btn-primary" data-toggle="modal" data-target="#musicAddModal"> 
+	            	添加
+	           	</button>
+	           	<button id = "remove" class="btn btn-primary"> 
+	            	删除
+	           	</button>
+			</div>
+			<table id="musictab"></table>
+	    </div>
+	</div>
        
     <div class="modal fade" id="musicAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -39,18 +62,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                    	<label for="name" class="col-sm-4 control-label">
+                    	<label for="name" class="col-sm-3 control-label">
                         	歌曲名：
                         </label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-13">
                         	<input type="text" class="form-control" id="name" placeholder="请输入歌曲名" />
                         </div>
                     </div> 
+                    <br/>
                     <div class="row">
-                    	<label for="singer" class="col-sm-4 control-label">
+                    	<label for="singer" class="col-sm-3 control-label">
                         	歌手：
                         </label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-13">
                         	<input type="text" class="form-control" id="singer" placeholder="请输入歌手" />
                         </div>
                     </div>
@@ -71,6 +95,7 @@
 <script charset="UTF-8" type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script charset="UTF-8" type="text/javascript" src="../js/bootstrap-table.min.js"></script>
 <script charset="UTF-8" type="text/javascript" src="../js/bootstrap-table-locale-all.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
 <script charset="UTF-8" type="text/javascript" src="../js/music-manage.js"></script>
 </body>
 </html>

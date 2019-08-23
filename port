@@ -8,4 +8,6 @@ login-server 		8011		/loginServer/**
 
 music-manage-view 	8021		/musicManageView/**
 
-session-server		8041		/sessionServer/**
+music-manage-server	8031		/musicManageServer/**
+
+session-server		8041
