@@ -90,6 +90,8 @@ $(function($) {
 			success:function(result) {
 				if(result == "success") {
 					alert("添加成功！");
+					$("#name").val("");
+					$("#singer").val("");
 					$("#musicAddModal").modal('hide');
 					$table.bootstrapTable('refresh');
 				}
@@ -101,11 +103,15 @@ $(function($) {
 				}
 				else if(result == "fail") {
 					alert("添加失败！");
+					$("#name").val("");
+					$("#singer").val("");
 					$("#musicAddModal").modal('hide');
 				}
 			},
 			error:function(){
 				alert("连接失败！");
+				$("#name").val("");
+				$("#singer").val("");
 				$("#musicAddModal").modal('hide');
 			}
 		});
